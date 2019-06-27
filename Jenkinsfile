@@ -13,10 +13,8 @@ pipeline {
             deleteDir() /* clean up our workspace */
         }
         success {
-        mail to: 'taoguoyu@pystandard.com',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with ${env.BUILD_URL}"
-          }
+            echo 'I succeeeded!'
+        }
         unstable {
             echo 'I am unstable :/'
         }
